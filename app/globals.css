@@ -3,3 +3,17 @@
 *{
     font-family: Outfit;
 }
+
+.font-ovo{
+    font-family : Ovo;
+}
+
+.lightHover{
+    background-color : #fcf4ff;
+}
+.darkHover{
+    background-color : #2a004a;
+}
+.darkTheme{
+    background-color : #11001f;
+}
