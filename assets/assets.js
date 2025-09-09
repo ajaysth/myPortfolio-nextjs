@@ -76,7 +76,7 @@ export const assets = {
     right_arrow_bold_dark
 };
 
-export const workData = [
+export const projectData = [
     {
         title: 'Frontend project',
         description: 'Web Design',
