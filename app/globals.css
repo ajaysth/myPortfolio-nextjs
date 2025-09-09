@@ -8,12 +8,19 @@
     font-family : Ovo;
 }
 
-.lightHover{
-    background-color : #fcf4ff;
+.lightHover:hover {
+  background-color: #edeae4;
 }
-.darkHover{
-    background-color : #2a004a;
+
+.darkHover:hover {
+  background-color: #2a004a;
 }
-.darkTheme{
-    background-color : #11001f;
+
+.darkTheme {
+  background-color: #11001f;
+}
+
+.grid-cols-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
