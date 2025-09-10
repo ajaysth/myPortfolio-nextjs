@@ -53,6 +53,11 @@ import bgt from './bg2.jpg';
 import call from './call.png';
 import edu from './edu.png';
 import project from './project.png';
+import tool from './tool.png';
+import setting from './setting.png';
+import db from './db.png';
+import os from './os.png';
+import code from './code.png';
 
 
 
@@ -111,6 +116,11 @@ export const assets = {
     call,
     edu,
     project,
+    os,
+    db,
+    tool,
+    setting,
+    code,
 };
 
 export const projectData = [
@@ -136,16 +146,16 @@ export const projectData = [
 ]
 
 export const skillData = [
-    { icon: assets.web_icon, title: 'Programming languages', description: 'Java, C, Javascript, React, NextJs, php, Python, Django ', link: '' },
-    { icon: assets.mobile_icon, title: 'Databases', description: 'MySql, Sqlite, Oracle', link: '' },
-    { icon: assets.ui_icon, title: 'Tools', description: 'Github, Slack, Discord, Microsoft Office', link: '' },
-    { icon: assets.graphics_icon, title: 'Operating Systems', description: 'Windows, Linux(Pop OS)', link: '' },
+    { icon: assets.code, title: 'Programming languages', description: 'Java, C, Javascript, React, NextJs, php, Python, Django ', link: '' },
+    { icon: assets.db, title: 'Databases', description: 'MySql, Sqlite, Oracle', link: '' },
+    { icon: assets.tool, title: 'Tools', description: 'Github, Slack, Discord, Microsoft Office', link: '' },
+    { icon: assets.os, title: 'Operating Systems', description: 'Windows, Linux(Pop OS)', link: '' },
 ]
 
 export const infoList = [
     { icon: assets.edu, iconDark: assets.edu_icon_dark, title: 'Prev Education', description: 'SEE and +2 (Sainik Awasiya Mahavidyalaya)' },
     { icon: assets.edu, iconDark: assets.edu_icon_dark, title: 'Ongoing Education', description: 'BCA (Everest College)' },
-    { icon: assets.project, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { icon: assets.project, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 3 projects' }
 ];
 
 export const toolsData = [

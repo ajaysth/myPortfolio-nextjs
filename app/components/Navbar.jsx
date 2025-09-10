@@ -130,8 +130,8 @@ const Navbar = () => {
 
             <li><Link onClick={closeMenu} href="/">Home</Link></li>
             <li><Link onClick={closeMenu} href="/about">About Me</Link></li>
-            <li><Link onClick={closeMenu} href="/services">Services</Link></li>
-            <li><Link onClick={closeMenu} href="/work">My Work</Link></li>
+            <li><Link onClick={closeMenu} href="/skills">Skills</Link></li>
+            <li><Link onClick={closeMenu} href="/project">My Projects</Link></li>
             <li><Link onClick={closeMenu} href="/contact">Contact Me</Link></li>
         </ul>
     </nav>

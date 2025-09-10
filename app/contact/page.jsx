@@ -50,17 +50,53 @@ const Contact = () => {
           className='text-center max-w-2xl mx-auto mt-5 mb-12'>I'd love to hear from you. If u have any queries, please do down the below.</p>
 
         <form
-          onSubmit={onSubmit} className='max-w-2xl mx-auto' >
-            <div className='grid-cols-auto gap-6 mt-10 mb-8 '>
-                <input className='flex-1 p-3 outline-none border-[0.5px] border-gray-500 rounded-md bg-white' type="text" name="name"  placeholder='Enter Your Name'  required/>
-                <input className='flex-1 p-3 outline-none border-[0.5px] border-gray-500 rounded-md bg-white' type="email" name="email" id="" placeholder='Enter Your Email'  required/>
+            onSubmit={onSubmit}
+            className="max-w-2xl mx-auto bg-white dark:bg-gray-300 p-8 rounded-2xl shadow-lg"
+          >
+            {/* Name & Email Fields */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter Your Name"
+                required
+                className="w-full p-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Your Email"
+                required
+                className="w-full p-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+              />
             </div>
-            <textarea className='w-full p-4 outline-none border-[0.5px] border-gray-500 rounded-md bg-white mb-6' rows='6' placeholder='Enter Your message' name='message'  required></textarea>
-            <button className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-green-600 text-white rounded-full mx-auto darkHover duration-300' type='submit'>Submit Now <Image src={assets.right_arrow_white} alt='' className='w-4' /> </button>
-            
 
-            <p className='mt-4'>{result}</p>
-        </form>
+            {/* Message Field */}
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Enter Your Message"
+              required
+              className="w-full p-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition mb-6 resize-none"
+            ></textarea>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 via-green-600 to-green-700 
+                        hover:from-green-600 hover:via-green-700 hover:to-green-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg 
+                        transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Submit Now
+              <Image src={assets.right_arrow_white} alt="arrow" className="w-4 h-4" />
+            </button>
+
+            {/* Result Message */}
+            {result && (
+              <p className="mt-4 text-center text-green-700 dark:text-green-700">{result}</p>
+            )}
+          </form>
+
 
 
     </div>
