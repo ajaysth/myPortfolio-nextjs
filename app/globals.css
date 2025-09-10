@@ -8,8 +8,13 @@
     font-family : Ovo;
 }
 
+.font-outfit{
+  font-family: Outfit;
+}
+
 .lightHover:hover {
   background-color: #edeae4;
+  color: black;
 }
 
 .darkHover:hover {
@@ -24,3 +29,5 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+

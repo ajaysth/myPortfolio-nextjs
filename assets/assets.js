@@ -1,4 +1,4 @@
-import user_image from './user-image.png';
+import user_image from './user-image.jpeg';
 import code_icon from './code-icon.png';
 import code_icon_dark from './code-icon-dark.png';
 import edu_icon from './edu-icon.png';
@@ -35,6 +35,28 @@ import right_arrow from './right-arrow.png';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
+import fb_icon from './fb-icon.png';
+import dc_icon from './dc-icon.png';
+
+import github_icon from './github-icon.png';
+
+import insta_icon from './insta-icon.png';
+
+import linkedin_icon from './linkedin-icon.png';
+import linux_icon from './linux-icon.png';
+import vscode_icon from './vscode-icon.png';
+import slack_icon from './slack-icon.png';
+import ms_icon from './ms-icon.png';
+import my_logo from './my-logo.png';
+import bgo from './bgo.jpg';
+import bgt from './bg2.jpg';
+import call from './call.png';
+import edu from './edu.png';
+import project from './project.png';
+
+
+
+
 
 export const assets = {
     user_image,
@@ -44,7 +66,7 @@ export const assets = {
     edu_icon_dark,
     project_icon,
     project_icon_dark,
-    vscode,
+    // vscode,
     firebase,
     figma,
     git,
@@ -73,45 +95,59 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    fb_icon,
+    dc_icon,
+    github_icon,
+    insta_icon,
+    linkedin_icon,
+    linux_icon,
+    vscode_icon,
+    slack_icon,
+    ms_icon,
+    my_logo,
+    bgo,
+    bgt,
+    call,
+    edu,
+    project,
 };
 
 export const projectData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
+        title: 'Juneli(Ecom)',
+        description: ' Python Django Sqlite',
         bgImage: '/work-1.png',
+        link: 'https://github.com/ajaysth/juneli-django.git',
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
+        title: 'Foodey(Ecom)',
+        description: 'HTML Css php',
         bgImage: '/work-2.png',
+        link: 'https://github.com/ajaysth/food-ordering-system.git',
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
+        title: 'My Portfolio',
+        description: 'Next JS',
         bgImage: '/work-3.png',
+        link: 'https://github.com/ajaysth/myPortfolio-nextjs.git',
     },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
+    
 ]
 
-export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+export const skillData = [
+    { icon: assets.web_icon, title: 'Programming languages', description: 'Java, C, Javascript, React, NextJs, php, Python, Django ', link: '' },
+    { icon: assets.mobile_icon, title: 'Databases', description: 'MySql, Sqlite, Oracle', link: '' },
+    { icon: assets.ui_icon, title: 'Tools', description: 'Github, Slack, Discord, Microsoft Office', link: '' },
+    { icon: assets.graphics_icon, title: 'Operating Systems', description: 'Windows, Linux(Pop OS)', link: '' },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { icon: assets.edu, iconDark: assets.edu_icon_dark, title: 'Prev Education', description: 'SEE and +2 (Sainik Awasiya Mahavidyalaya)' },
+    { icon: assets.edu, iconDark: assets.edu_icon_dark, title: 'Ongoing Education', description: 'BCA (Everest College)' },
+    { icon: assets.project, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    assets.vscode_icon, assets.github_icon, assets.linux_icon, assets.ms_icon, assets.git, assets.slack_icon
 ];
