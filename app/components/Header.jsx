@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 
 const Header = () => {
   return (
-    <div className="w-11/12 max-w-6xl mx-auto min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 py-16">
+    <div className="w-11/12 max-w-5xl mx-auto min-h-screen flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-1 py-15">
   {/* Left: Profile Image */}
   <motion.div
     initial={{ scale: 0 }}
@@ -17,12 +17,12 @@ const Header = () => {
     <Image
       src={assets.profile_img}
       alt="profile"
-      className="rounded-full w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 object-cover"
+      className="rounded-full w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 object-cover"
     />
   </motion.div>
 
   {/* Right: Text & Buttons */}
-  <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-4">
+  <div className="flex-1 flex flex-col items-center text-center gap-4">
     <motion.h3
       initial={{ y: -20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
@@ -52,7 +52,7 @@ const Header = () => {
     </motion.p>
 
     {/* Buttons */}
-    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mt-6 w-full sm:w-auto justify-center lg:justify-start">
+    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mt-6 w-full sm:w-auto justify-center lg:justify-center">
       <motion.a
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
