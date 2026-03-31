@@ -1,60 +1,123 @@
-'use client'
-import { assets, projectData } from '@/assets/assets'
-import React from 'react'
-import Image from 'next/image'
-
+"use client";
+import { assets, projectData } from "@/assets/assets";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import Masonry from "react-masonry-css";
 
 const Project = () => {
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 3,
+    768: 2,
+    500: 1,
+  };
+
   return (
-    <div 
-    
- className='w-full px-[12%] py-35 scroll-mt-20'>
-        <h4
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="w-full px-[5%] md:px-[12%] py-10 scroll-mt-10 relative"
+    >
+      <motion.h4
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="text-center mb-2 text-lg font-Outfit"
+      >
+        My portfolio
+      </motion.h4>
 
-        className='text-center mb-2 text-lg'>My portfolio</h4>
-        <h2
-        className='text-center text-5xl '>My Projects</h2>
+      <motion.h2
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="text-center text-5xl font-Ovo"
+      >
+        My Projects
+      </motion.h2>
 
-        <p
-         className='text-center max-w-2xl mx-auto mt-5 mb-12'>These are my projects based on my skills.</p>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-700 dark:text-gray-300"
+      >
+        These are my projects based on my skills.
+      </motion.p>
 
-
-        <div
-         className='grid-cols-auto my-10 gap-5'>
-            {projectData.map((project, index) => (
-                <a 
-                    key={index} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    href={project.link}
+      <div className="max-w-7xl mx-auto w-full">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="flex w-auto -ml-8"
+          columnClassName="pl-8 bg-clip-padding space-y-8"
+        >
+          {projectData.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative cursor-pointer overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-gray-100 dark:bg-gray-800"
+            >
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full h-full"
+              >
+                {/* Dynamic Image height to fake masonry effect if images are same ratio */}
+                <div
+                  className={`relative w-full overflow-hidden ${index % 3 === 0 ? "h-[350px]" : index % 3 === 1 ? "h-[450px]" : "h-[300px]"}`}
                 >
-                    <div 
-                    className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
-                    style={{ backgroundImage: `url(${project.bgImage})` }}
-                    >
-                    <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-300 group-hover:bottom-7">
-                        <div>
-                        <h2 className="font-semibold">{project.title}</h2>
-                        <p className="text-sm text-gray-900">{project.description}</p>
-                        </div>
-                        <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-400 transition">
-                        <Image src={assets.send_icon} alt="" className="w-5" />
-                        </div>
-                    </div>
-                    </div>
-                </a>
-            ))}
-        </div>
+                  <img
+                    src={project.bgImage}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Shadow overlay for text readability */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
+                </div>
 
-        {/* <motion.a
-        initial={{x: 30, opacity: 0}}
-        whileInView={{x: 0, opacity: 1}}
-        transition={{duration:0.6, delay: 0.7}}
-        className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] rounded-full px-10 py-3 mx-auto lightHover duration-200 ' href="">
-            Show More <Image src={assets.right_arrow_bold} alt='' className='w-4' />
-        </motion.a> */}
-    </div>
-  )
-}
+                {/* Expanding Description Overlay on Hover */}
+                <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <h2 className="text-white font-bold text-2xl mb-1 shadow-black drop-shadow-md">
+                      {project.title}
+                    </h2>
 
-export default Project
+                    {/* The description shows completely on hover */}
+                    <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out">
+                      <div className="overflow-hidden">
+                        <p className="text-gray-200 text-sm mt-3 leading-relaxed font-medium">
+                          {project.description}
+                        </p>
+
+                        <div className="inline-flex items-center gap-2 text-lime-400 text-sm mt-4 font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                          View Full Project{" "}
+                          <img
+                            src={assets.send_icon.src}
+                            className="w-4 h-4 invert"
+                            alt="go"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </motion.div>
+          ))}
+        </Masonry>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Project;
