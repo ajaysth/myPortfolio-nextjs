@@ -6,6 +6,7 @@ import { infoList } from "@/assets/assets";
 import { motion } from "framer-motion";
 
 import Navbar from "../components/Navbar";
+import TimelineComponent, { Timeline } from "../components/ui/timeline";
 
 const About = () => {
   return (
@@ -32,7 +33,7 @@ const About = () => {
             </p>
 
             {/* Education Section */}
-            <div>
+            {/* <div>
               <h1 className="mb-4 text-3xl font-bold">Education</h1>
               <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {infoList.map(({ icon, title, description }, index) => (
@@ -48,7 +49,8 @@ const About = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
+            <Timeline data={infoList} />
 
             {/* Tools Section */}
             <div>

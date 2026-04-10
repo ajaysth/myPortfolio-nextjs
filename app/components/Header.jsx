@@ -11,22 +11,26 @@ const Header = () => {
   {/* Left: Profile Image */}
   <motion.div
     initial={{ scale: 0 }}
-    whileInView={{ scale: 1 }}
-    transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+    animate={{ scale: 1 }}
+    // whileInView={{ scale: 1 }}
+    transition={{ duration: 0.8, type: "spring", stiffness: 200 , }}
+    
     className="flex-shrink-0"
   >
-    <Image
+    <motion.div initial={{scale: 1}} animate={{scale: 1.1}} transition={{duration: 3, ease: "easeInOut",repeat: Infinity, delay: 3, stiffness:200}}>
+      <Image
       src={assets.profile_img}
       alt="profile"
       className="rounded-full w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 object-cover"
     />
+    </motion.div>
   </motion.div>
 
   {/* Right: Text & Buttons */}
   <div className="flex-1 flex flex-col items-center text-center gap-4">
     <motion.h3
       initial={{ y: -20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3, delay: 0.1 }}
       className="flex items-center justify-center lg:justify-start gap-2 text-lg sm:text-xl md:text-2xl font-Ovo"
     >
@@ -36,7 +40,7 @@ const Header = () => {
 
     <motion.h1
       initial={{ y: -30, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3, delay: 0.2 }}
       className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-snug"
     >
@@ -45,7 +49,7 @@ const Header = () => {
 
     <motion.p
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.3, delay: 0.3 }}
       className="max-w-xl  text-gray-700 sm:text-base md:text-lg"
     >
@@ -56,7 +60,7 @@ const Header = () => {
     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 mt-6 w-full sm:w-auto justify-center lg:justify-center">
       <motion.a
         initial={{ y: 30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.4 }}
         href="/aj-resume.pdf"
         download
@@ -68,9 +72,9 @@ const Header = () => {
 
       <motion.a
         initial={{ y: 30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.5 }}
-        href="/contact"
+        href="#contact"
         className="w-full sm:w-auto px-6 sm:px-10 py-3 border border-black rounded-full bg-black text-white flex items-center justify-center gap-2 hover:bg-gray-800 transition-all duration-300"
       >
         Contact Me
